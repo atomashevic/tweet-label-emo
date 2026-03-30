@@ -13,6 +13,11 @@ ACCESS_CODES: dict[str, int] = {
     "scl-01": 10,
     "scl-02": 11,
     "scl-03": 12,
+    "ff-01": 13,
+    "ff-02": 14,
+    "ff-03": 15,
+    "ff-04": 16,
+    "ff-05": 17,
 }
 
 SCL_CODES: set[str] = {"scl-01", "scl-02", "scl-03"}

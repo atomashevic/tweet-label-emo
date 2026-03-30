@@ -215,18 +215,57 @@ def page_login():
             st.session_state.sample_idx = sample_idx
             st.session_state.annotations = annotations
             st.session_state.current_pos = current_pos
-            st.session_state.page = "instructions"
+            st.session_state.page = "consent"
             st.rerun()
         else:
             st.error("Nevažeći pristupni kod. Pokušajte ponovo.")
+
+
+def page_consent():
+    st.title("Saglasnost za ispitanike")
+    st.markdown(
+        """
+Zamolili bismo Vas da učestvujete u ovom istraživanju čiji je cilj procena tvitova **#nisamprijavila**.
+Vaše učešće je potpuno **anonimno** i od vas se neće tražiti nikakvi lični podaci, niti demografski podaci.
+
+Vaš zadatak će biti da procenite **50 tvitova** u odnosu na **dominantan emocionalni ton**,
+u skladu sa detaljnijim uputstvom koje ćete dobiti. Procena tvitova će trajati **maksimalno 20-ak minuta**.
+
+Učešće u ovom istraživanju je **dobrovoljno** i od njega možete odustati u bilo kojem trenutku,
+bez ikakvih posledica. Učešće u istraživanju je bez materijalne ili druge nadoknade.
+
+Istraživanje vodi interdisciplinarni tim, a vodeću grupu istraživača čine saradnici sa Odseka za psihologiju
+Filozofskog fakulteta u Novom Sadu i Instituta za fiziku u Beogradu.
+Ukoliko imate pitanja u vezi s istraživanjem, možete se obratiti na mejl **bojana.dinic@ff.uns.ac.rs**.
+        """
+    )
+    if st.button("Dajem saglasnost, nastavi dalje →", use_container_width=True):
+        st.session_state.page = "instructions"
+        st.rerun()
 
 
 def page_instructions():
     st.title("Uputstvo za anotaciju")
     st.markdown(
         """
-Vaš zadatak je da svakom tvitu dodelite **jednu od 8 emocija** prema Plutchik-ovom točku emocija,
-ili jednu od dve posebne oznake ako tvit ne izražava emociju ili ga ne razumete.
+Ovo su primeri tvitova koji su prikupljeni u određenom periodu preko Twitter/X platforme,
+a koji sadrže **#nisamprijavila**. ID tvita postoji zarad naše evidencije,
+a u okviru tvitova su izostavljeni nazivi korisnika, tj. stoji `@[user]`.
+
+| tweet_id | text |
+|---|---|
+| 1481522225534623744 | Nekada daaavno nosili su bedževe sa natpisom "Čedo oženi me". <br><br>Ja od danas nosim ovaj: <br><br>#NisamPrijavila |
+| 1481414310836551681 | Pisala sam o #nisamprijavila <br><br>Trenutno je objavljeno na radnoj verziji platforme. Ne zamerite. Inspiracija ne bira. Već neko vreme planiram da objavljujem svoja pisanija, ali eto tek sada skupljam hrabrosti. :) |
+| 1481406780102090756 | @[user] Ovo je baš za hashtag #NisamPrijavila |
+
+---
+
+**Uputstvo**
+
+Vaš zadatak je da svakom tvitu dodelite **jednu od 8 emocija** koja dominira u tvitu.
+
+Ukoliko tvit ne izražava nikakvu emociju, odaberite **Emocionalno neutralno**.
+Ukoliko ne možete da razumete tvit, odaberite **Ne mogu da razumem**.
 
 **Emocije:**
 - **poverenje** — osećaj sigurnosti, oslanjanja na nekoga
@@ -237,9 +276,6 @@ ili jednu od dve posebne oznake ako tvit ne izražava emociju ili ga ne razumete
 - **gađenje** — odbojnost, odvratnost, moralno negodovanje
 - **radost** — sreća, olakšanje, nada
 - **iščekivanje** — napetost, očekivanje, praćenje razvoja situacije
-
-Dodelite emociju koja **dominira** u tvitu. Ako tvit ne izražava nikakvu emociju, odaberite
-*Emocionalno neutralno*. Ako ne možete da razumete tvit, odaberite *Ne mogu da razumem*.
 
 Ispod su primeri za svaku emociju:
         """
@@ -370,6 +406,8 @@ def page_annotation():
 page = st.session_state.page
 if page == "login":
     page_login()
+elif page == "consent":
+    page_consent()
 elif page == "instructions":
     page_instructions()
 elif page == "annotation":

@@ -13,6 +13,10 @@ SCL_SEED = 99
 SCL_NUM_SAMPLES = 3
 SCL_SAMPLE_SIZE = 50
 
+FF_SEED = 123
+FF_NUM_SAMPLES = 5
+FF_SAMPLE_SIZE = 50
+
 
 @st.cache_data
 def load_tweets() -> pd.DataFrame:
@@ -88,8 +92,33 @@ def get_scl_samples() -> list[pd.DataFrame]:
     return [df.iloc[sample_indices[i]].reset_index(drop=True) for i in range(SCL_NUM_SAMPLES)]
 
 
+@st.cache_data
+def get_ff_samples() -> list[pd.DataFrame]:
+    """Returns 5 stratified 50-tweet samples for ff annotators (indices 13-17)."""
+    df = load_labeled_tweets()
+    rng = random.Random(FF_SEED)
+    total = len(df)
+
+    sample_indices: list[list[int]] = [[] for _ in range(FF_NUM_SAMPLES)]
+    for emotion, group in df.groupby("chatgpt_emotion"):
+        idxs = group.index.tolist()
+        rng.shuffle(idxs)
+        per_sample = max(1, round(FF_SAMPLE_SIZE * len(idxs) / total))
+        needed = per_sample * FF_NUM_SAMPLES
+        idxs = idxs[:needed]
+        for i in range(FF_NUM_SAMPLES):
+            sample_indices[i].extend(idxs[i * per_sample : (i + 1) * per_sample])
+
+    for i in range(FF_NUM_SAMPLES):
+        rng.shuffle(sample_indices[i])
+
+    return [df.iloc[sample_indices[i]].reset_index(drop=True) for i in range(FF_NUM_SAMPLES)]
+
+
 def get_sample(sample_idx: int) -> "pd.DataFrame":
-    """Return the correct sample DataFrame for any sample index (0-9 main, 10-12 scl)."""
+    """Return the correct sample DataFrame for any sample index (0-9 main, 10-12 scl, 13-17 ff)."""
     if sample_idx < NUM_SAMPLES:
         return get_samples()[sample_idx]
-    return get_scl_samples()[sample_idx - NUM_SAMPLES]
+    if sample_idx < NUM_SAMPLES + SCL_NUM_SAMPLES:
+        return get_scl_samples()[sample_idx - NUM_SAMPLES]
+    return get_ff_samples()[sample_idx - NUM_SAMPLES - SCL_NUM_SAMPLES]
