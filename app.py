@@ -1,5 +1,7 @@
 import json
+import re
 import time
+from html import escape
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -52,6 +54,46 @@ _EMOTION_COLORS_SELECTED: dict[str, str] = {
     "iščekivanje":  "#ffb060",
     "iznenađenje":  "#70c8f0",
 }
+
+_HASHTAG_RE = re.compile(r"(?i)#nisamprijavila")
+
+
+def _format_example_text(text: str) -> str:
+    """Escape example text, preserve line breaks, and highlight the campaign hashtag."""
+    formatted = escape(text)
+    formatted = _HASHTAG_RE.sub(
+        '<span style="background:#fff2a8;color:#7a1f1f;font-weight:700;'
+        'padding:0 0.18rem;border-radius:0.3rem;">\\g<0></span>',
+        formatted,
+    )
+    return formatted.replace("\n", "<br>")
+
+
+def _force_light_mode() -> None:
+    """Force the Streamlit app into light mode."""
+    components.html(
+        """
+        <script>
+        (function() {
+            const doc = window.parent.document;
+            const root = doc.documentElement;
+            const body = doc.body;
+
+            function applyLightMode() {
+                window.parent.localStorage.setItem('theme', 'light');
+                root.setAttribute('data-theme', 'light');
+                root.style.colorScheme = 'light';
+                body.classList.remove('dark');
+                body.classList.add('light');
+            }
+
+            applyLightMode();
+            new MutationObserver(applyLightMode).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+        })();
+        </script>
+        """,
+        height=0,
+    )
 
 
 def _inject_enhancements(current_label: str | None, start_ms: int | None, show_timer: bool) -> None:
@@ -159,7 +201,7 @@ def _examples_table():
         rows_html += f"""
         <tr style="background:{bg};">
           <td style="padding:10px 14px;font-weight:600;white-space:nowrap;vertical-align:top;">{e["emotion"]}</td>
-          <td style="padding:10px 14px;vertical-align:top;">{e["tweet"]}</td>
+          <td style="padding:10px 14px;vertical-align:top;">{_format_example_text(e["tweet"])}</td>
           <td style="padding:10px 14px;color:#444;vertical-align:top;">{e["explanation"]}</td>
         </tr>"""
     st.markdown(
@@ -170,6 +212,51 @@ def _examples_table():
               <th style="padding:10px 14px;text-align:left;white-space:nowrap;">Emocija</th>
               <th style="padding:10px 14px;text-align:left;">Tvit</th>
               <th style="padding:10px 14px;text-align:left;">Objašnjenje</th>
+            </tr>
+          </thead>
+          <tbody>{rows_html}</tbody>
+        </table>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _intro_examples_table() -> None:
+    rows = [
+        (
+            "1481522225534623744",
+            'Nekada daaavno nosili su bedževe sa natpisom "Čedo oženi me".\n'
+            "Ja od danas nosim ovaj:\n"
+            "#NisamPrijavila",
+        ),
+        (
+            "1481414310836551681",
+            "Pisala sam o #nisamprijavila\n"
+            "Trenutno je objavljeno na radnoj verziji platforme. Ne zamerite. Inspiracija ne bira. "
+            "Već neko vreme planiram da objavljujem svoja pisanija, ali eto tek sada skupljam hrabrosti. :)",
+        ),
+        (
+            "1481406780102090756",
+            "@[user] Ovo je baš za hashtag #NisamPrijavila",
+        ),
+    ]
+
+    rows_html = ""
+    for tweet_id, text in rows:
+        rows_html += f"""
+        <tr>
+          <td style="padding:10px 14px;vertical-align:top;white-space:nowrap;font-family:monospace;">{tweet_id}</td>
+          <td style="padding:10px 14px;vertical-align:top;">{_format_example_text(text)}</td>
+        </tr>
+        """
+
+    st.markdown(
+        f"""
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem;line-height:1.6;background:#fff;border:1px solid #d7dbe2;border-radius:12px;overflow:hidden;">
+          <thead>
+            <tr style="background:#eef2f7;">
+              <th style="padding:10px 14px;text-align:left;white-space:nowrap;">tweet_id</th>
+              <th style="padding:10px 14px;text-align:left;">text</th>
             </tr>
           </thead>
           <tbody>{rows_html}</tbody>
@@ -198,6 +285,7 @@ def _tweet_card(text: str):
 # ── Pages ─────────────────────────────────────────────────────────────────────
 
 def page_login():
+    _force_light_mode()
     st.title("Anotacija tvitova — #NisamPrijavila")
     st.markdown("Unesite vaš pristupni kod da biste počeli.")
     code_input = st.text_input("Pristupni kod", type="password", key="login_input")
@@ -222,6 +310,7 @@ def page_login():
 
 
 def page_consent():
+    _force_light_mode()
     st.title("Saglasnost za ispitanike")
     st.markdown(
         """
@@ -245,20 +334,13 @@ Ukoliko imate pitanja u vezi s istraživanjem, možete se obratiti na mejl **boj
 
 
 def page_instructions():
+    _force_light_mode()
     st.title("Uputstvo za anotaciju")
     st.markdown(
         """
 Ovo su primeri tvitova koji su prikupljeni u određenom periodu preko Twitter/X platforme,
 a koji sadrže **#nisamprijavila**. ID tvita postoji zarad naše evidencije,
 a u okviru tvitova su izostavljeni nazivi korisnika, tj. stoji `@[user]`.
-
-| tweet_id | text |
-|---|---|
-| 1481522225534623744 | Nekada daaavno nosili su bedževe sa natpisom "Čedo oženi me". <br><br>Ja od danas nosim ovaj: <br><br>#NisamPrijavila |
-| 1481414310836551681 | Pisala sam o #nisamprijavila <br><br>Trenutno je objavljeno na radnoj verziji platforme. Ne zamerite. Inspiracija ne bira. Već neko vreme planiram da objavljujem svoja pisanija, ali eto tek sada skupljam hrabrosti. :) |
-| 1481406780102090756 | @[user] Ovo je baš za hashtag #NisamPrijavila |
-
----
 
 **Uputstvo**
 
@@ -280,6 +362,8 @@ Ukoliko ne možete da razumete tvit, odaberite **Ne mogu da razumem**.
 Ispod su primeri za svaku emociju:
         """
     )
+    _intro_examples_table()
+    st.markdown("---")
     _examples_table()
     if st.button("Nastavi na anotaciju →", use_container_width=True):
         st.session_state.page = "annotation"
@@ -289,6 +373,7 @@ Ispod su primeri za svaku emociju:
 
 
 def page_annotation():
+    _force_light_mode()
     sample_idx = st.session_state.sample_idx
     code = st.session_state.code
     annotations = st.session_state.annotations
