@@ -288,7 +288,7 @@ def page_login():
     _force_light_mode()
     st.title("Anotacija tvitova — #NisamPrijavila")
     st.markdown("Unesite vaš pristupni kod da biste počeli.")
-    code_input = st.text_input("Pristupni kod", type="password", key="login_input")
+    code_input = st.text_input("Pristupni kod", key="login_input")
     if st.button("Prijavi se", use_container_width=True):
         code = code_input.strip()
         if code in ACCESS_CODES:
