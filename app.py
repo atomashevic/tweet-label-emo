@@ -341,7 +341,12 @@ def page_instructions():
 Ovo su primeri tvitova koji su prikupljeni u određenom periodu preko Twitter/X platforme,
 a koji sadrže **#nisamprijavila**. ID tvita postoji zarad naše evidencije,
 a u okviru tvitova su izostavljeni nazivi korisnika, tj. stoji `@[user]`.
-
+        """
+    )
+    _intro_examples_table()
+    st.markdown("---")
+    st.markdown(
+        """
 **Uputstvo**
 
 Vaš zadatak je da svakom tvitu dodelite **jednu od 8 emocija** koja dominira u tvitu.
@@ -362,8 +367,6 @@ Ukoliko ne možete da razumete tvit, odaberite **Ne mogu da razumem**.
 Ispod su primeri za svaku emociju:
         """
     )
-    _intro_examples_table()
-    st.markdown("---")
     _examples_table()
     if st.button("Nastavi na anotaciju →", use_container_width=True):
         st.session_state.page = "annotation"
