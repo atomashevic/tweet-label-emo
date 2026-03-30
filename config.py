@@ -18,6 +18,11 @@ ACCESS_CODES: dict[str, int] = {
     "ff-03": 15,
     "ff-04": 16,
     "ff-05": 17,
+    "ff-test": 18,
+    **{
+        f"ff{code}": 18 + offset // 7
+        for offset, code in enumerate(range(101, 178))
+    },
 }
 
 SCL_CODES: set[str] = {"scl-01", "scl-02", "scl-03"}
