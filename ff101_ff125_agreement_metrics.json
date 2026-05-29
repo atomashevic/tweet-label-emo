@@ -1,0 +1,97 @@
+{
+  "samples": {
+    "18": {
+      "n_items": 50,
+      "n_raters": 7,
+      "coders": [
+        "ff101",
+        "ff102",
+        "ff103",
+        "ff104",
+        "ff105",
+        "ff106",
+        "ff107"
+      ],
+      "unanimous_items": 2,
+      "strict_majority_items": 30,
+      "tie_items": 3,
+      "mean_pairwise_agreement": 0.3542857142857143,
+      "mean_pairwise_cohen_kappa": 0.27492937615848956,
+      "fleiss_kappa": 0.2695404846335698,
+      "fleiss_observed_agreement": 0.3542857142857143,
+      "krippendorff_alpha_nominal": 0.27162751182033107,
+      "krippendorff_observed_disagreement": 0.6457142857142857
+    },
+    "19": {
+      "n_items": 50,
+      "n_raters": 7,
+      "coders": [
+        "ff108",
+        "ff109",
+        "ff110",
+        "ff111",
+        "ff112",
+        "ff113",
+        "ff114"
+      ],
+      "unanimous_items": 1,
+      "strict_majority_items": 29,
+      "tie_items": 8,
+      "mean_pairwise_agreement": 0.3904761904761904,
+      "mean_pairwise_cohen_kappa": 0.3002092079750187,
+      "fleiss_kappa": 0.29569050628533355,
+      "fleiss_observed_agreement": 0.3904761904761906,
+      "krippendorff_alpha_nominal": 0.2977028191245181,
+      "krippendorff_observed_disagreement": 0.6095238095238096
+    },
+    "20": {
+      "n_items": 50,
+      "n_raters": 7,
+      "coders": [
+        "ff115",
+        "ff116",
+        "ff117",
+        "ff118",
+        "ff119",
+        "ff120",
+        "ff121"
+      ],
+      "unanimous_items": 2,
+      "strict_majority_items": 38,
+      "tie_items": 4,
+      "mean_pairwise_agreement": 0.42095238095238097,
+      "mean_pairwise_cohen_kappa": 0.32450307489896474,
+      "fleiss_kappa": 0.3185908150652909,
+      "fleiss_observed_agreement": 0.42095238095238086,
+      "krippendorff_alpha_nominal": 0.3205376984508188,
+      "krippendorff_observed_disagreement": 0.579047619047619
+    },
+    "21": {
+      "n_items": 50,
+      "n_raters": 4,
+      "coders": [
+        "ff122",
+        "ff123",
+        "ff124",
+        "ff125"
+      ],
+      "unanimous_items": 5,
+      "strict_majority_items": 15,
+      "tie_items": 14,
+      "mean_pairwise_agreement": 0.33,
+      "mean_pairwise_cohen_kappa": 0.2446707611235421,
+      "fleiss_kappa": 0.2345918775347003,
+      "fleiss_observed_agreement": 0.3299999999999999,
+      "krippendorff_alpha_nominal": 0.23841891814702687,
+      "krippendorff_observed_disagreement": 0.67
+    }
+  },
+  "total_items": 200,
+  "total_unanimous_items": 10,
+  "total_strict_majority_items": 112,
+  "total_tie_items": 29,
+  "weighted_mean_pairwise_agreement": 0.3834782608695652,
+  "weighted_mean_pairwise_cohen_kappa": 0.295079701542365,
+  "overall_krippendorff_alpha_nominal": 0.29440803742551036,
+  "overall_krippendorff_observed_disagreement": 0.6165217391304347
+}

@@ -1,0 +1,372 @@
+{
+  "missing": {
+    "chatgpt": 0,
+    "gemma": 0
+  },
+  "majority": {
+    "chatgpt": {
+      "n_items": 212,
+      "accuracy": 0.6745283018867925,
+      "cohen_kappa": 0.5945451521702977,
+      "macro_recall": 0.5044785461452128,
+      "top_errors": [
+        {
+          "consensus_label": "gađenje",
+          "model_label": "bes",
+          "count": 9
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "strah",
+          "count": 6
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "strah",
+          "count": 4
+        },
+        {
+          "consensus_label": "radost",
+          "model_label": "poverenje",
+          "count": 4
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "strah",
+          "count": 4
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "bes",
+          "count": 3
+        },
+        {
+          "consensus_label": "iščekivanje",
+          "model_label": "poverenje",
+          "count": 3
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "gađenje",
+          "count": 3
+        },
+        {
+          "consensus_label": "strah",
+          "model_label": "tuga",
+          "count": 3
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "bes",
+          "count": 3
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "tuga",
+          "count": 2
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "strah",
+          "count": 2
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "radost",
+          "count": 2
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "tuga",
+          "count": 2
+        },
+        {
+          "consensus_label": "iznenađenje",
+          "model_label": "bes",
+          "count": 2
+        }
+      ]
+    },
+    "gemma": {
+      "n_items": 212,
+      "accuracy": 0.6462264150943396,
+      "cohen_kappa": 0.5512151062688758,
+      "macro_recall": 0.44426561093227757,
+      "top_errors": [
+        {
+          "consensus_label": "strah",
+          "model_label": "tuga",
+          "count": 11
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "bes",
+          "count": 9
+        },
+        {
+          "consensus_label": "radost",
+          "model_label": "poverenje",
+          "count": 5
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "strah",
+          "count": 5
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "bes",
+          "count": 5
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "strah",
+          "count": 5
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "tuga",
+          "count": 5
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "tuga",
+          "count": 4
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "tuga",
+          "count": 4
+        },
+        {
+          "consensus_label": "iščekivanje",
+          "model_label": "poverenje",
+          "count": 3
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "strah",
+          "count": 2
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "iznenađenje",
+          "count": 2
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "strah",
+          "count": 2
+        },
+        {
+          "consensus_label": "iznenađenje",
+          "model_label": "bes",
+          "count": 2
+        },
+        {
+          "consensus_label": "iščekivanje",
+          "model_label": "bes",
+          "count": 2
+        }
+      ]
+    },
+    "pairwise": {
+      "human_majority_vs_chatgpt": {
+        "agreement": 0.6745283018867925,
+        "cohen_kappa": 0.5945451521702977
+      },
+      "human_majority_vs_gemma": {
+        "agreement": 0.6462264150943396,
+        "cohen_kappa": 0.5512151062688758
+      },
+      "chatgpt_vs_gemma": {
+        "agreement": 0.7122641509433962,
+        "cohen_kappa": 0.6238838961114505
+      },
+      "three_way_exact_agreement_rate": 0.5613207547169812
+    }
+  },
+  "unique_highest_frequency": {
+    "chatgpt": {
+      "n_items": 330,
+      "accuracy": 0.5757575757575758,
+      "cohen_kappa": 0.48247471183251006,
+      "macro_recall": 0.4619428501781443,
+      "top_errors": [
+        {
+          "consensus_label": "gađenje",
+          "model_label": "bes",
+          "count": 16
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "strah",
+          "count": 9
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "strah",
+          "count": 8
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "strah",
+          "count": 8
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "bes",
+          "count": 8
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "tuga",
+          "count": 7
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "tuga",
+          "count": 6
+        },
+        {
+          "consensus_label": "strah",
+          "model_label": "tuga",
+          "count": 6
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "radost",
+          "count": 5
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "iščekivanje",
+          "count": 5
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "bes",
+          "count": 5
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "tuga",
+          "count": 4
+        },
+        {
+          "consensus_label": "radost",
+          "model_label": "poverenje",
+          "count": 4
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "strah",
+          "count": 4
+        },
+        {
+          "consensus_label": "iznenađenje",
+          "model_label": "bes",
+          "count": 3
+        }
+      ]
+    },
+    "gemma": {
+      "n_items": 330,
+      "accuracy": 0.5181818181818182,
+      "cohen_kappa": 0.39988333924262004,
+      "macro_recall": 0.36081706964059906,
+      "top_errors": [
+        {
+          "consensus_label": "strah",
+          "model_label": "tuga",
+          "count": 20
+        },
+        {
+          "consensus_label": "bes",
+          "model_label": "tuga",
+          "count": 16
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "bes",
+          "count": 15
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "bes",
+          "count": 13
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "tuga",
+          "count": 11
+        },
+        {
+          "consensus_label": "gađenje",
+          "model_label": "strah",
+          "count": 11
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "tuga",
+          "count": 7
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "strah",
+          "count": 7
+        },
+        {
+          "consensus_label": "iščekivanje",
+          "model_label": "bes",
+          "count": 6
+        },
+        {
+          "consensus_label": "radost",
+          "model_label": "poverenje",
+          "count": 6
+        },
+        {
+          "consensus_label": "poverenje",
+          "model_label": "strah",
+          "count": 4
+        },
+        {
+          "consensus_label": "tuga",
+          "model_label": "bes",
+          "count": 4
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "strah",
+          "count": 4
+        },
+        {
+          "consensus_label": "Emocionalno neutralno",
+          "model_label": "tuga",
+          "count": 3
+        },
+        {
+          "consensus_label": "iznenađenje",
+          "model_label": "bes",
+          "count": 3
+        }
+      ]
+    },
+    "pairwise": {
+      "human_unique_highest_frequency_vs_chatgpt": {
+        "agreement": 0.5757575757575758,
+        "cohen_kappa": 0.48247471183251006
+      },
+      "human_unique_highest_frequency_vs_gemma": {
+        "agreement": 0.5181818181818182,
+        "cohen_kappa": 0.39988333924262004
+      },
+      "chatgpt_vs_gemma": {
+        "agreement": 0.6545454545454545,
+        "cohen_kappa": 0.548184089162183
+      },
+      "three_way_exact_agreement_rate": 0.44545454545454544
+    }
+  }
+}

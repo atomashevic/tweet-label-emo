@@ -1,0 +1,211 @@
+{
+  "strict_majority": {
+    "n_items": 135,
+    "accuracy": 0.5185185185185185,
+    "cohen_kappa": 0.4224693958141371,
+    "macro_recall": 0.3564974937343358,
+    "majority_distribution": {
+      "Emocionalno neutralno": 13,
+      "strah": 19,
+      "bes": 35,
+      "poverenje": 8,
+      "radost": 3,
+      "gađenje": 14,
+      "Ne mogu da razumem": 12,
+      "iščekivanje": 4,
+      "iznenađenje": 3,
+      "tuga": 24
+    },
+    "chatgpt_distribution": {
+      "radost": 5,
+      "strah": 32,
+      "tuga": 28,
+      "bes": 43,
+      "poverenje": 9,
+      "gađenje": 9,
+      "iščekivanje": 6,
+      "iznenađenje": 3
+    },
+    "top_errors": [
+      {
+        "majority_label": "gađenje",
+        "chatgpt_label": "bes",
+        "count": 5
+      },
+      {
+        "majority_label": "Emocionalno neutralno",
+        "chatgpt_label": "radost",
+        "count": 4
+      },
+      {
+        "majority_label": "bes",
+        "chatgpt_label": "strah",
+        "count": 4
+      },
+      {
+        "majority_label": "Emocionalno neutralno",
+        "chatgpt_label": "iščekivanje",
+        "count": 3
+      },
+      {
+        "majority_label": "Emocionalno neutralno",
+        "chatgpt_label": "bes",
+        "count": 3
+      },
+      {
+        "majority_label": "tuga",
+        "chatgpt_label": "strah",
+        "count": 3
+      },
+      {
+        "majority_label": "Ne mogu da razumem",
+        "chatgpt_label": "tuga",
+        "count": 3
+      },
+      {
+        "majority_label": "poverenje",
+        "chatgpt_label": "strah",
+        "count": 3
+      },
+      {
+        "majority_label": "bes",
+        "chatgpt_label": "tuga",
+        "count": 2
+      },
+      {
+        "majority_label": "gađenje",
+        "chatgpt_label": "tuga",
+        "count": 2
+      },
+      {
+        "majority_label": "Ne mogu da razumem",
+        "chatgpt_label": "strah",
+        "count": 2
+      },
+      {
+        "majority_label": "gađenje",
+        "chatgpt_label": "strah",
+        "count": 2
+      },
+      {
+        "majority_label": "iščekivanje",
+        "chatgpt_label": "bes",
+        "count": 2
+      },
+      {
+        "majority_label": "radost",
+        "chatgpt_label": "poverenje",
+        "count": 2
+      },
+      {
+        "majority_label": "poverenje",
+        "chatgpt_label": "bes",
+        "count": 2
+      }
+    ]
+  },
+  "strict_majority_non_ncdr": {
+    "n_items": 123,
+    "accuracy": 0.5691056910569106,
+    "cohen_kappa": 0.47043054427294884,
+    "macro_recall": 0.39610832637148424,
+    "majority_distribution": {
+      "Emocionalno neutralno": 13,
+      "strah": 19,
+      "bes": 35,
+      "poverenje": 8,
+      "radost": 3,
+      "gađenje": 14,
+      "iščekivanje": 4,
+      "iznenađenje": 3,
+      "tuga": 24
+    },
+    "chatgpt_distribution": {
+      "radost": 4,
+      "strah": 30,
+      "tuga": 25,
+      "bes": 41,
+      "poverenje": 8,
+      "gađenje": 8,
+      "iščekivanje": 5,
+      "iznenađenje": 2
+    },
+    "top_errors": [
+      {
+        "majority_label": "gađenje",
+        "chatgpt_label": "bes",
+        "count": 5
+      },
+      {
+        "majority_label": "Emocionalno neutralno",
+        "chatgpt_label": "radost",
+        "count": 4
+      },
+      {
+        "majority_label": "bes",
+        "chatgpt_label": "strah",
+        "count": 4
+      },
+      {
+        "majority_label": "Emocionalno neutralno",
+        "chatgpt_label": "iščekivanje",
+        "count": 3
+      },
+      {
+        "majority_label": "Emocionalno neutralno",
+        "chatgpt_label": "bes",
+        "count": 3
+      },
+      {
+        "majority_label": "tuga",
+        "chatgpt_label": "strah",
+        "count": 3
+      },
+      {
+        "majority_label": "poverenje",
+        "chatgpt_label": "strah",
+        "count": 3
+      },
+      {
+        "majority_label": "bes",
+        "chatgpt_label": "tuga",
+        "count": 2
+      },
+      {
+        "majority_label": "gađenje",
+        "chatgpt_label": "tuga",
+        "count": 2
+      },
+      {
+        "majority_label": "gađenje",
+        "chatgpt_label": "strah",
+        "count": 2
+      },
+      {
+        "majority_label": "iščekivanje",
+        "chatgpt_label": "bes",
+        "count": 2
+      },
+      {
+        "majority_label": "radost",
+        "chatgpt_label": "poverenje",
+        "count": 2
+      },
+      {
+        "majority_label": "poverenje",
+        "chatgpt_label": "bes",
+        "count": 2
+      },
+      {
+        "majority_label": "tuga",
+        "chatgpt_label": "gađenje",
+        "count": 2
+      },
+      {
+        "majority_label": "poverenje",
+        "chatgpt_label": "tuga",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "method": "Drop only `Ne mogu da razumem` votes and treat them as missing. Agreement is computed over emotions + neutral only.",
+  "samples": {
+    "18": {
+      "items_total": 50,
+      "dropped_dontknow_votes": 28,
+      "items_with_any_dontknow_vote": 16,
+      "items_with_lt2_remaining_votes": 0,
+      "usable_items_for_alpha": 50,
+      "weighted_pairwise_agreement_overlap": 0.39178690344062156,
+      "weighted_pairwise_kappa_overlap": 0.3066894592239839,
+      "krippendorff_alpha_nominal_no_dontknow": 0.30346877673982364,
+      "total_pairwise_overlap": 901
+    },
+    "19": {
+      "items_total": 50,
+      "dropped_dontknow_votes": 37,
+      "items_with_any_dontknow_vote": 16,
+      "items_with_lt2_remaining_votes": 1,
+      "usable_items_for_alpha": 49,
+      "weighted_pairwise_agreement_overlap": 0.42462600690448793,
+      "weighted_pairwise_kappa_overlap": 0.32561246601597005,
+      "krippendorff_alpha_nominal_no_dontknow": 0.32159899268441083,
+      "total_pairwise_overlap": 869
+    },
+    "20": {
+      "items_total": 50,
+      "dropped_dontknow_votes": 37,
+      "items_with_any_dontknow_vote": 21,
+      "items_with_lt2_remaining_votes": 0,
+      "usable_items_for_alpha": 50,
+      "weighted_pairwise_agreement_overlap": 0.47846332945285214,
+      "weighted_pairwise_kappa_overlap": 0.3713761028692959,
+      "krippendorff_alpha_nominal_no_dontknow": 0.37072273031837166,
+      "total_pairwise_overlap": 859
+    },
+    "21": {
+      "items_total": 50,
+      "dropped_dontknow_votes": 17,
+      "items_with_any_dontknow_vote": 13,
+      "items_with_lt2_remaining_votes": 0,
+      "usable_items_for_alpha": 50,
+      "weighted_pairwise_agreement_overlap": 0.3941299790356394,
+      "weighted_pairwise_kappa_overlap": 0.3028799646372071,
+      "krippendorff_alpha_nominal_no_dontknow": 0.3012750767990502,
+      "total_pairwise_overlap": 954
+    },
+    "22": {
+      "items_total": 50,
+      "dropped_dontknow_votes": 38,
+      "items_with_any_dontknow_vote": 22,
+      "items_with_lt2_remaining_votes": 0,
+      "usable_items_for_alpha": 50,
+      "weighted_pairwise_agreement_overlap": 0.33372641509433965,
+      "weighted_pairwise_kappa_overlap": 0.2405529897749672,
+      "krippendorff_alpha_nominal_no_dontknow": 0.23783530026211874,
+      "total_pairwise_overlap": 848
+    }
+  },
+  "overall": {
+    "usable_items_for_alpha": 249,
+    "weighted_pairwise_agreement_overlap": 0.40442338072669826,
+    "weighted_pairwise_kappa_overlap": 0.30946353637699847,
+    "krippendorff_alpha_nominal_no_dontknow": 0.30863833847459365
+  }
+}
